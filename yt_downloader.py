@@ -69,7 +69,7 @@ def yt_dl():
 				stream.download(filename=input(f"	[+] {YEL}Save name (without extension): {STD}"))
 				print(f"\n	{GREEN}[+] Done{STD}\n")
 				print(f"	{GREEN}[+] File saved at {YEL}{os.getcwd()}{STD}\n")
-				choice = input(f"	Type {YEL}{BOLD}open{STD} to open the location else, type enter : ")
+				choice = input(f"	Type {YEL}{BOLD}open{STD} to open the location otherwise, type enter : ")
 				if choice == "open" or choice == "Open":
 					os.system('open . > /dev/null')
 				print("\n\n\n")
