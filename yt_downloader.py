@@ -28,7 +28,7 @@ def header():
 	print("	[+] Here is a simple youtube")
 	print("	downloader.")
 	print(f"	[+] Type {BOLD}{YEL}exit{STD}{MAG} to leave")
-	print(f"	[+] Don't forget to paste yout link after {BOLD}{YEL}-->{STD}{MAG}")
+	print(f"	[+] Don't forget to paste your link after {BOLD}{YEL}-->{STD}{MAG}")
 	print("	[+] Please enjoy it")
 	print(STD)
 
