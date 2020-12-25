@@ -37,20 +37,22 @@ def progress_Check(chunk, file_handle, remaining):
 	percent = (100 * (file_size - remaining)) / file_size
 	print(f"\r	{GREEN}[+] " + "{:00.0f}% downloaded".format(percent), f"{STD}", end='')
 
+
 def get_res(vid):
 	data_vid = []
 	res = []
+	maxi = None
 	for stream in vid.streams.filter(progressive = True, file_extension = "mp4"):
-		if "mp4" in str(stream):
-			data_vid.append(list(str(stream).split(" ")))
-			if data_vid[-1][3] not in ['res="1080p"', 'res="720p"', 'res="480p"', 'res="360p"', 'res="240p"', 'res="144p"']:
-				data_vid.pop()
+		data_vid.append(list(str(stream).split(" ")))
 	for i, elem in enumerate(data_vid):
 		print(f"	{CYAN}[{i}] {elem[3][5:-1]}{STD}")
 		res.append([elem[1][6:-1], elem[3][5:-1]])
-	choice = int(input(f"	[+]{YEL} Chose the quality {STD}: {YEL}"))
+		maxi = i
+	choice = input(f"	[+]{YEL} Chose the quality {STD}: {YEL}")
 	print(STD, end='')
-	return res[choice][0]
+	if choice.isdigit() == False or int(choice) > maxi:
+		return get_res(vid)
+	return res[int(choice)][0]
 
 def yt_dl():
 	url = input(f"{YEL}	--> ")
