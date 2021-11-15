@@ -1,5 +1,5 @@
 # yt_downloader
-Download video from YouTube thanks to its link
+Download video from YouTube using its link
 
 # v.0
 
